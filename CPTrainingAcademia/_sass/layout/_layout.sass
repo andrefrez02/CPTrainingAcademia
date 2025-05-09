@@ -1,0 +1,104 @@
+%header
+  display: grid
+  height: min-content
+
+  > div
+    &:first-of-type
+      background-color: #fff
+      box-shadow: 0 6px 12px 0 rgb(0 0 0 / 25%)
+      position: relative
+      z-index: 10
+
+      .wrapper
+        padding-block: 5px
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+.site-header
+  @extend %header
+
+  .header
+    &-logo
+      display: flex
+      align-items: center
+      gap: 0.5em
+
+    &-menu
+      display: flex
+
+      &__icon
+        display: flex
+        flex-direction: column
+        gap: .4em
+        position: relative
+
+        > div
+          width: 2.5em
+          height: .35em
+          border-radius: 3px
+          position: relative
+          box-shadow: 0px 1px 1px 0 rgb(0 0 0 / 20%)
+
+          &:nth-child(1)
+            background-image: linear-gradient(180deg, rgb(93, 0, 92) 10%, rgb(241, 61, 10) 500%)
+
+          &:nth-child(2)
+            background-image: linear-gradient(180deg, rgb(93, 0, 92) -100%, rgb(241, 61, 10) 300%)
+
+          &:nth-child(3)
+            background-image: linear-gradient(180deg, rgb(93, 0, 92) -200%, rgb(241, 61, 10) 253%)
+
+    &-decor
+      margin-top: -120px
+      width: 100%
+      height: auto
+      overflow: clip
+      position: absolute
+      z-index: 9
+      pointer-events: none
+
+      svg
+        width: 115%
+        height: 100%
+        margin-inline: -7.5%
+
+.banner-topo
+  width: 100%
+  height: 560px
+  overflow: clip
+
+  &__mensagem
+    @extend .wrapper
+    height: 100%
+    position: relative
+    z-index: 2
+    display: flex
+    flex-direction: row
+    align-items: flex-end
+
+    &-imagem
+      margin-bottom: 30px
+
+  &__fundo
+    width: 105%
+    height: 105%
+    object-fit: cover
+    object-position: center
+    filter: blur(5px)
+    position: relative
+    z-index: 1
+    margin-top: -100%
+
+.outline-gradient
+  color: #fff
+  background-image: linear-gradient(180deg, rgb(93, 0, 92) 0%, rgb(241, 61, 10) 100%)
+  background-size: 100%
+  background-repeat: repeat
+  -webkit-background-clip: text
+  -webkit-text-stroke: 5px transparent
+  -moz-background-clip: text
+  -moz-text-stroke: 5px transparent
+  width: min-content
+  display: flex
+  padding: 5px

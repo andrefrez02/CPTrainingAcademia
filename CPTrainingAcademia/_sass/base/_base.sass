@@ -1,0 +1,31 @@
+%no-mp
+  margin: 0
+  padding: 0
+
+html
+  @extend %no-mp
+
+html, body
+  @extend %no-mp
+
+body
+  font-family: 'Barlow Medium'
+  background-color: $bg-color
+
+p, h1, h2, h3, h4, h5, h6
+  @extend %no-mp
+
+h1
+  font-family: "Barlow Bold"
+  font-size: 80px
+  line-height: 0
+  height: 80px
+  vertical-align: middle
+  display: flex
+  align-items: center
+  margin-top: -10px
+
+.wrapper
+  max-width: 1200px
+  margin: auto
+  width: 100%

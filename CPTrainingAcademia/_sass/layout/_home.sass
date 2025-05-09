@@ -1,0 +1,158 @@
+.secao
+  &-planos
+    display: grid
+    background-image: linear-gradient(180deg, lighten(rgb(93, 0, 92), 20%) 0%, lighten(rgb(241, 61, 10), 20%) 100%)
+    height: 700px
+    grid-auto-rows: min-content
+    gap: 30px
+    position: relative
+    z-index: 0
+
+    .planos
+      &-conteudo
+        display: grid
+        align-items: center
+        color: #fff
+        gap: 60px
+
+        &__texto
+          > *
+            display: flex
+
+          h2
+            font-size: 2.1em
+
+            > div
+              width: 52px
+              height: 58px
+
+              > *, > * > *
+                width: inherit
+                height: inherit
+
+          p
+            font-size: 1.6em
+
+          span, h2, p
+            text-wrap: nowrap
+            align-items: center
+
+          h2, p
+            align-items: center
+            gap: 15px
+            text-align: center
+            justify-content: center
+
+            span
+              display: flex
+              gap: 2.5px
+
+        &__tabela
+          display: grid
+          grid-template-columns: 1fr repeat(4, 1fr)
+          position: relative
+
+          &-grid
+            position: absolute
+            width: 100%
+            height: 100%
+            z-index: -1
+            display: grid
+            grid-template-rows: 45px repeat(4, 20px) 1fr
+            gap: 12px
+            pointer-events: none
+
+            & > div:not(:first-child)
+              height: 3px
+              width: 100%
+              background-color: #fff
+              border-radius: 5px
+
+          &-beneficios
+            display: grid
+            grid-template-rows: 45px repeat(4, min-content) 1fr
+            gap: 15px
+
+          &-item
+            display: grid
+            grid-template-rows: 45px repeat(4, min-content) 1fr
+            gap: 10px
+            padding-inline: 30px
+            padding-bottom: 15px
+
+            &.selecionado
+              background-clip: padding-box
+              border: solid 5px transparent
+              box-sizing: border-box
+              position: relative
+              margin: auto
+              background-image: linear-gradient(180deg, #c300c1 -80%, #f98868 130%)
+              border-radius: 10px
+
+              &::before
+                content: ""
+                position: absolute
+                top: 0
+                right: 0
+                bottom: 0
+                left: 0
+                z-index: -1
+                margin: -5px
+                border-radius: inherit
+                background-image: $gradiente-4
+
+            h2
+              font-size: 1.2em
+              font-family: "Barlow Medium"
+              line-height: normal
+              margin: 0
+              text-wrap: nowrap
+              display: flex
+              align-items: center
+              gap: 2px
+              justify-content: center
+              height: min-content
+              align-self: end
+
+            span:not(.outline-gradient)
+              margin: auto
+
+            .preco
+              display: grid
+              margin: auto
+              gap: 15px
+              justify-items: center
+              text-align: center
+
+              .bold
+                font-family: 'Barlow Bold'
+
+              div
+                display: grid
+
+                .bold
+                  font-size: 1.2em
+
+  &-placeholder
+    @extend .secao-planos
+    background: $bg-color !important
+
+.header-secao
+  @extend %header
+
+  > div
+    &:first-of-type
+      box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.25), 0 -6px 12px 0 rgba(0, 0, 0, 0.25) !important
+
+      .wrapper
+        justify-content: center !important
+        padding-block: 15px !important
+
+        h1
+          background-image: $gradiente-4
+          background-size: 100%
+          background-repeat: repeat
+          -webkit-background-clip: text
+          -webkit-text-fill-color: transparent
+          -moz-background-clip: text
+          -moz-text-fill-color: transparent
